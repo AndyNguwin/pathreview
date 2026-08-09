@@ -51,9 +51,9 @@ I reproduced the issue by sending `curl` requests to the `POST auth/register` an
 
 ### Check-in 2 (end of week)
 
-**PR link:** [link to your submitted pull request]
+**PR link:** [https://github.com/ascherj/pathreview/pull/549](https://github.com/ascherj/pathreview/pull/549)
 
-**Branch:** [the branch name you worked on, e.g. `fix/123-short-description`]
+**Branch:** `test/88-reviews-no-documents-test`
 
 **What you built:**
 I created an endpoint-level test for `POST /reviews` when the submitted profile has no data source or ingested content. The test uses FastAPI `TestClient` with mocked auth and db dependencies. I have the current test marked as `xfail` because the current behavior doesn't align with the expected behavior written in the issue writeup. The expected behavior was for the endpoint to return an appropriate error such as `400`, but it instead processes successfully and creates/commits new reviews to the database.
